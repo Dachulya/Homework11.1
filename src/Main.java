@@ -1,13 +1,25 @@
 import java.time.LocalDate;
 
 public class Main {
-    public static void leapYear(int year){
+    private static void findOutLeapYear(int year){
         if ((year%4==0 && year%100!=0)||(year%400==0)){
             System.out.println(year+"-высокосный год");
         }else {System.out.println(year+"-не высокостный год");}
     }
-    public static void operatingSystemYearReleaseDate(int clientOS,int oldAndNew){
-        switch (clientOS){
+    private static void findOutOperatingSystemYearReleaseDate(int clientOS,int oldAndNew){
+        int releaseDate= LocalDate.now().getYear();
+        if (clientOS==0){
+            System.out.println("Устаовите версию приложения для IOS поссылке");
+            if (oldAndNew<releaseDate) {
+                System.out.println("Установите упрощённую версию для IOS");}
+        }
+        if (clientOS==1){
+            System.out.println("Установите версию приложения для Android по ссылке");
+            if (oldAndNew<releaseDate) {
+                System.out.println("Установите упрощённую версию для Android");
+            }
+        }
+        /*switch (clientOS){
             case 0:
                 System.out.println("Устаовите версию приложения для IOS поссылке");
                 if (oldAndNew<2015) {
@@ -20,9 +32,9 @@ public class Main {
                     System.out.println("Установите упрощённую версию для Android");
                 }
                 break;
-        }
+        }*/
     }
-    public static void distanceEqualsTime(int deliveryDistance){
+    private static void calculateDistanceEqualsTime(int deliveryDistance){
         int timeDelivery=1;
         if (deliveryDistance<20){
 
@@ -34,18 +46,18 @@ public class Main {
         }
     }
 
-    public  static void task1(){
+    private  static void task1(){
         int currentYear = LocalDate.now().getYear();
-        leapYear(currentYear);
+        findOutLeapYear(currentYear);
     }
-    public  static void task2(){
+    private  static void task2(){
         int client=0;
-        int releaseDate= LocalDate.now().getYear();
-        operatingSystemYearReleaseDate(client,releaseDate);
+        int date=2000;
+        findOutOperatingSystemYearReleaseDate(client,date);
     }
-    public static void task3(){
+    private static void task3(){
         int distance=44;
-        distanceEqualsTime(distance);
+        calculateDistanceEqualsTime(distance);
     }
     public static void main(String[] args) {
         task1();
