@@ -8,6 +8,16 @@ public class Main {
     }
     private static void findOutOperatingSystemYearReleaseDate(int clientOS,int oldAndNew){
         int releaseDate= LocalDate.now().getYear();
+        if (clientOS==0&&oldAndNew<releaseDate){
+            System.out.println("Устаовите старую версию приложения для IOS поссылке");}
+        if (clientOS==0&&oldAndNew==releaseDate){
+            System.out.println("Устаовите новую версию приложения для IOS поссылке");}
+        if (clientOS==1&&oldAndNew<releaseDate){
+            System.out.println("Устаовите старую версию приложения для Android поссылке");
+        }else {
+            System.out.println("Устаовите новую версию приложения для Android поссылке");
+        }
+        /*
         if (clientOS==0){
             System.out.println("Устаовите версию приложения для IOS поссылке");
             if (oldAndNew<releaseDate) {
@@ -18,7 +28,7 @@ public class Main {
             if (oldAndNew<releaseDate) {
                 System.out.println("Установите упрощённую версию для Android");
             }
-        }
+        }*/
         /*switch (clientOS){
             case 0:
                 System.out.println("Устаовите версию приложения для IOS поссылке");
@@ -36,14 +46,18 @@ public class Main {
     }
     private static void calculateDistanceEqualsTime(int deliveryDistance){
         int timeDelivery=1;
+        int a=0;
         if (deliveryDistance<20){
-
-            System.out.println("Потребуется дней: "+timeDelivery);
+            a=timeDelivery;
+            //System.out.println("Потребуется дней: "+timeDelivery);
         } else if (deliveryDistance>20 && deliveryDistance<60) {
-            System.out.println("Потребуется дней: "+(timeDelivery+1));
+            a=timeDelivery+1;
+            //System.out.println("Потребуется дней: "+(timeDelivery+1));
         }else {
-            System.out.println("Потребуется дней: "+(timeDelivery+2));
+            a=timeDelivery+2;
+            //System.out.println("Потребуется дней: "+(timeDelivery+2));
         }
+        System.out.println("Сроки доставки: "+a);
     }
 
     private  static void task1(){
@@ -51,13 +65,14 @@ public class Main {
         findOutLeapYear(currentYear);
     }
     private  static void task2(){
-        int client=0;
+        int client=1;
         int date=2000;
         findOutOperatingSystemYearReleaseDate(client,date);
     }
     private static void task3(){
         int distance=44;
         calculateDistanceEqualsTime(distance);
+
     }
     public static void main(String[] args) {
         task1();
