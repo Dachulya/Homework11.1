@@ -44,7 +44,7 @@ public class Main {
                 break;
         }*/
     }
-    private static void calculateDistanceEqualsTime(int deliveryDistance){
+    private static int calculateDistanceEqualsTime(int deliveryDistance){
         int timeDelivery=1;
         int a=0;
         if (deliveryDistance<20){
@@ -57,7 +57,7 @@ public class Main {
             a=timeDelivery+2;
             //System.out.println("Потребуется дней: "+(timeDelivery+2));
         }
-        System.out.println("Сроки доставки: "+a);
+        return a;
     }
 
     private  static void task1(){
@@ -71,7 +71,7 @@ public class Main {
     }
     private static void task3(){
         int distance=44;
-        calculateDistanceEqualsTime(distance);
+        System.out.println("Сроки доставки: "+calculateDistanceEqualsTime(distance));
 
     }
     public static void main(String[] args) {
